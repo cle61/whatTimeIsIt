@@ -4,7 +4,7 @@ LOCALES=$1
 
 # include parse_yaml function
 . lib/parse_yaml.sh
-eval $(parse_yaml locales/$LOCALES.yml $LOCALES"_")
+eval $(parse_yaml locales/$LOCALES.yml "translation_")
 
 now=$(date +"%H:%M")
-echo ${!LOCALES'_fr_hour'} $now
+echo $translation_hour $now
