@@ -1,0 +1,10 @@
+#!/bin/bash
+
+LOCALES=$1
+
+# include parse_yaml function
+. lib/parse_yaml.sh
+eval $(parse_yaml locales/$LOCALES.yml $LOCALES"_")
+
+now=$(date +"%H:%M")
+echo ${!LOCALES'_fr_hour'} $now
